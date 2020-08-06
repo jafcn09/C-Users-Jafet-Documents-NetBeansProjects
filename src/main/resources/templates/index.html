@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Iniciar</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Iniciar</h1>
+        <div th:if="${clientes !=null and !clientes.empty">
+        <table border="2">
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Dni</th>
+                <th>Celular</th>
+            </tr>
+            <tr th:each="cliente : ${clientes}">
+                <td th:text="${cliente.nombre}">Nombre</td>
+       
+                <td th:text="${cliente.apellido}">Apellido</td>
+       
+        <td th:text="${cliente.dni}">Dni</td>
+        
+      <td th:text="${cliente.celular}">Celular</td>
+                
+            </tr>
+            
+            
+        </table>
+            </div>
+        <div th:if ="${clientes == null or clientes.empty}">
+            
+            No puede quedar vacìa la lista
+        </div>
+        
+        </br>
+
+    </body>
+</html>
